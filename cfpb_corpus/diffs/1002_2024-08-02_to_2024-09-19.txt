@@ -1,0 +1,6 @@
+- "editorial note: at 89 fr 55029, july 3, 2024, § 1002.14 was amended by; a. in paragraph (b)(1) removing “october 1, 2024” and adding in its place “july 18, 2025”; b. in paragraph (b)(2) removing “april 1, 2025” and adding in its place “january 16, 2026”; c. in paragraphs (b)(3) and (4) removing “january 1, 2026” and adding in its place “october 18, 2026”; and d. adding paragraph (c)(3); however, the amendment could not be incorporated due to inaccurate amendatory instruction."
+~ "october 1, 2024." → "july 18, 2025."
+~ "april 1, 2025." → "january 16, 2026."
+~ "january 1," → "october 18,"
+~ "january 1," → "october 18,"
++ "(3) alternative time period for determining compliance dates. a financial institution is permitted to use its originations of covered credit transactions in each of calendar years 2023 and 2024 in lieu of calendar years 2022 and 2023 as specified in paragraphs (b) and (c)(2) of this section. [88 fr 35528, may 31, 2023, as amended at 89 fr 55029, july 3, 2024; 89 fr 76713, sept. 19, 2024]"

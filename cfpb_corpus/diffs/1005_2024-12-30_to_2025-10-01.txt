@@ -1,0 +1,8 @@
++ "this exception also does not apply to covered overdraft credit extended by very large financial institutions as those terms are defined in regulation z, 12 cfr 1026.62."
+~ "2016]" → "2016; 89 fr 106836, dec. 30, 2024]"
+~ "2" → "section 1005.2"
+~ "cards." → "cards and covered overdraft credit extended by very large financial institutions."
+~ "1026.61." → "1026.61 and for covered overdraft credit extended by very large financial institutions as those terms are defined in regulation z, 12 cfr 1026.62."
+~ "card," → "card or covered overdraft credit extended by very large financial institutions,"
++ "2. covered overdraft credit. under § 1005.17(a)(1), a line of credit subject to regulation z (12 cfr 1026) is not an overdraft service. covered overdraft credit as that term is defined in 12 cfr 1026.62, is a line of credit subject to regulation z and is therefore not an overdraft service. covered overdraft credit includes above breakeven overdraft credit extended by a very large financial institution as those terms are defined in 12 cfr 1026.62. above breakeven overdraft credit extended by a very large financial institution is therefore not an overdraft service under § 1005.17(a)."
+~ "2020]" → "2020; 89 fr 106836, dec. 30, 2024]"

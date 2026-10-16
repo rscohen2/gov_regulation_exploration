@@ -1,198 +1,749 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<title>CSS Zen Garden: The Beauty of CSS Design</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CFPB Regulatory Language Explorer</title>
+<style>
+  :root {
+    --bg: #F8F7F4;
+    --bg-panel: #ffffff;
+    --bg-aside: #f0ede6;
+    --text: #1a2332;
+    --text-muted: #5a6478;
+    --accent: #5c7a6b;
+    --accent-light: #dce8e3;
+    --amber: #c4893a;
+    --amber-light: #f5e8d5;
+    --border: #d8d3c8;
+    --border-strong: #b8b2a8;
+    --obama: #4a7fa5;
+    --trump1: #c4893a;
+    --biden: #5c7a6b;
+    --trump2: #8b5a6b;
+    --font-serif: Georgia, 'Times New Roman', serif;
+    --font-mono: 'Courier New', Courier, monospace;
+    --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
 
-	<link rel="stylesheet" media="screen" href="style.css?v=8may2013">
-	<link rel="alternate" type="application/rss+xml" title="RSS" href="http://www.csszengarden.com/zengarden.xml">
+  * { box-sizing: border-box; margin: 0; padding: 0; }
 
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="author" content="Dave Shea">
-	<meta name="description" content="A demonstration of what can be accomplished visually through CSS-based design.">
-	<meta name="robots" content="all">
+  body {
+    font-family: var(--font-sans);
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    font-size: 14px;
+    line-height: 1.5;
+  }
 
+  header {
+    background: var(--text);
+    color: #fff;
+    padding: 18px 28px;
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+    border-bottom: 3px solid var(--amber);
+  }
 
-	<!--[if lt IE 9]>
-	<script src="script/html5shiv.js"></script>
-	<![endif]-->
+  header h1 {
+    font-family: var(--font-serif);
+    font-size: 18px;
+    font-weight: normal;
+    letter-spacing: 0.01em;
+  }
+
+  header p {
+    font-size: 12px;
+    color: #99aabb;
+    font-style: italic;
+  }
+
+  .layout {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    height: calc(100vh - 61px);
+  }
+
+  /* Sidebar */
+  aside {
+    background: var(--bg-aside);
+    border-right: 1px solid var(--border);
+    overflow-y: auto;
+    padding: 16px 0;
+  }
+
+  .sidebar-section {
+    margin-bottom: 8px;
+  }
+
+  .sidebar-label {
+    font-family: var(--font-serif);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    padding: 8px 16px 4px;
+    text-transform: uppercase;
+  }
+
+  .term-btn {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 7px 16px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--text);
+    border-left: 3px solid transparent;
+    transition: background 0.1s, border-color 0.1s;
+  }
+
+  .term-btn:hover { background: var(--accent-light); }
+
+  .term-btn.active {
+    background: var(--accent-light);
+    border-left-color: var(--accent);
+    color: var(--accent);
+    font-weight: bold;
+  }
+
+  .term-btn .hit-badge {
+    float: right;
+    font-size: 10px;
+    color: var(--text-muted);
+    background: var(--border);
+    padding: 1px 5px;
+    border-radius: 8px;
+    font-family: var(--font-sans);
+  }
+
+  /* Main panel */
+  main {
+    overflow-y: auto;
+    padding: 24px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .section-title {
+    font-family: var(--font-serif);
+    font-size: 13px;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 6px;
+    margin-bottom: 14px;
+  }
+
+  /* Hit count chart */
+  .chart-card {
+    background: var(--bg-panel);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 20px 24px;
+  }
+
+  .chart-title {
+    font-family: var(--font-serif);
+    font-size: 16px;
+    margin-bottom: 16px;
+    color: var(--text);
+  }
+
+  .period-bars {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    align-items: end;
+  }
+
+  .period-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .bar-wrap {
+    width: 100%;
+    height: 120px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  .bar {
+    width: 60%;
+    border-radius: 2px 2px 0 0;
+    transition: height 0.4s ease;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .bar:hover { opacity: 0.85; }
+
+  .bar-label {
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--text);
+    text-align: center;
+  }
+
+  .period-name {
+    font-size: 11px;
+    color: var(--text-muted);
+    text-align: center;
+    font-family: var(--font-serif);
+    font-style: italic;
+  }
+
+  .obama-color { background: var(--obama); }
+  .trump1-color { background: var(--trump1); }
+  .biden-color { background: var(--biden); }
+  .trump2-color { background: var(--trump2); }
+
+  /* Neighbor panel */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .neighbor-card {
+    background: var(--bg-panel);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 16px;
+  }
+
+  .neighbor-card h3 {
+    font-family: var(--font-serif);
+    font-size: 13px;
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .neighbor-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .neighbor-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .neighbor-word {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    width: 130px;
+    flex-shrink: 0;
+    color: var(--text);
+  }
+
+  .neighbor-bar-wrap {
+    flex: 1;
+    height: 10px;
+    background: var(--bg-aside);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .neighbor-bar {
+    height: 100%;
+    border-radius: 2px;
+    transition: width 0.3s ease;
+  }
+
+  .neighbor-count {
+    font-size: 10px;
+    color: var(--text-muted);
+    width: 28px;
+    text-align: right;
+  }
+
+  /* Drift panel */
+  .drift-card {
+    background: var(--bg-panel);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 20px 24px;
+  }
+
+  .drift-row {
+    display: grid;
+    grid-template-columns: 160px 1fr 1fr;
+    gap: 16px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    align-items: start;
+  }
+
+  .drift-row:last-child { border-bottom: none; }
+
+  .drift-period {
+    font-family: var(--font-serif);
+    font-size: 12px;
+    color: var(--text-muted);
+    font-style: italic;
+    padding-top: 2px;
+  }
+
+  .drift-words {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .drift-tag {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    padding: 2px 7px;
+    border-radius: 2px;
+  }
+
+  .drift-new {
+    background: var(--accent-light);
+    color: var(--accent);
+  }
+
+  .drift-lost {
+    background: #f5e0e0;
+    color: #8b3a3a;
+  }
+
+  .drift-none {
+    color: var(--text-muted);
+    font-style: italic;
+    font-size: 11px;
+    padding-top: 4px;
+  }
+
+  /* Concordance */
+  .concordance-card {
+    background: var(--bg-panel);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 20px 24px;
+  }
+
+  .period-tabs {
+    display: flex;
+    gap: 0;
+    margin-bottom: 16px;
+    border-bottom: 2px solid var(--border);
+  }
+
+  .period-tab {
+    padding: 7px 16px;
+    font-family: var(--font-serif);
+    font-size: 12px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-muted);
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    transition: color 0.1s, border-color 0.1s;
+  }
+
+  .period-tab:hover { color: var(--text); }
+  .period-tab.active { color: var(--text); border-bottom-color: var(--amber); }
+
+  .concordance-lines {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-height: 300px;
+    overflow-y: auto;
+  }
+
+  .conc-line {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    line-height: 1.7;
+    color: var(--text-muted);
+    padding: 10px 12px;
+    background: var(--bg-aside);
+    border-radius: 3px;
+    border-left: 3px solid var(--border);
+  }
+
+  .conc-line .match {
+    color: var(--text);
+    font-weight: bold;
+    background: var(--amber-light);
+    padding: 1px 3px;
+    border-radius: 2px;
+  }
+
+  .conc-meta {
+    font-size: 10px;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+    font-family: var(--font-sans);
+  }
+
+  .conc-source-cfr { border-left-color: var(--obama); }
+  .conc-source-preamble { border-left-color: var(--amber); }
+
+  .source-legend {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 12px;
+    font-size: 11px;
+    color: var(--text-muted);
+    align-items: center;
+  }
+
+  .legend-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 1px;
+    margin-right: 4px;
+  }
+
+  .empty-state {
+    color: var(--text-muted);
+    font-style: italic;
+    font-size: 13px;
+    padding: 20px 0;
+    text-align: center;
+  }
+
+  /* Period color dot */
+  .period-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 4px;
+  }
+
+  .loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    color: var(--text-muted);
+    font-style: italic;
+  }
+</style>
 </head>
+<body>
 
-<!--
+<header>
+  <h1>CFPB Regulatory Language Explorer</h1>
+  <p>Keyword-in-context analysis across administrations · CFR text + Federal Register preambles</p>
+</header>
 
+<div class="layout">
+  <aside id="sidebar">
+    <div class="loading">Loading terms…</div>
+  </aside>
 
-
-	View source is a feature, not a bug. Thanks for your curiosity and
-	interest in participating!
-
-	Here are the submission guidelines for the new and improved csszengarden.com:
-
-	- CSS3? Of course! Prefix for ALL browsers where necessary.
-	- go responsive; test your layout at multiple screen sizes.
-	- your browser testing baseline: IE9+, recent Chrome/Firefox/Safari, and iOS/Android
-	- Graceful degradation is acceptable, and in fact highly encouraged.
-	- use classes for styling. Don't use ids.
-	- web fonts are cool, just make sure you have a license to share the files. Hosted
-	  services that are applied via the CSS file (ie. Google Fonts) will work fine, but
-	  most that require custom HTML won't. TypeKit is supported, see the readme on this
-	  page for usage instructions: https://github.com/mezzoblue/csszengarden.com/
-
-	And a few tips on building your CSS file:
-
-	- use :first-child, :last-child and :nth-child to get at non-classed elements
-	- use ::before and ::after to create pseudo-elements for extra styling
-	- use multiple background images to apply as many as you need to any element
-	- use the Kellum Method for image replacement, if still needed. http://goo.gl/GXxdI
-	- don't rely on the extra divs at the bottom. Use ::before and ::after instead.
-
-		
--->
-
-<body id="css-zen-garden">
-<div class="page-wrapper">
-
-	<section class="intro" id="zen-intro">
-		<header role="banner">
-			<h1>CSS Zen Garden</h1>
-			<h2>The Beauty of <abbr title="Cascading Style Sheets">CSS</abbr> Design</h2>
-		</header>
-
-		<div class="summary" id="zen-summary" role="article">
-			<p>A demonstration of what can be accomplished through <abbr title="Cascading Style Sheets">CSS</abbr>-based design. Select any style sheet from the list to load it into this page.</p>
-			<p>Download the example <a href="/examples/index" title="This page's source HTML code, not to be modified.">html file</a> and <a href="/examples/style.css" title="This page's sample CSS, the file you may modify.">css file</a></p>
-		</div>
-
-		<div class="preamble" id="zen-preamble" role="article">
-			<h3>The Road to Enlightenment</h3>
-			<p>Littering a dark and dreary road lay the past relics of browser-specific tags, incompatible <abbr title="Document Object Model">DOM</abbr>s, broken <abbr title="Cascading Style Sheets">CSS</abbr> support, and abandoned browsers.</p>
-			<p>We must clear the mind of the past. Web enlightenment has been achieved thanks to the tireless efforts of folk like the <abbr title="World Wide Web Consortium">W3C</abbr>, <abbr title="Web Standards Project">WaSP</abbr>, and the major browser creators.</p>
-			<p>The CSS Zen Garden invites you to relax and meditate on the important lessons of the masters. Begin to see with clarity. Learn to use the time-honored techniques in new and invigorating fashion. Become one with the web.</p>
-		</div>
-	</section>
-
-	<div class="main supporting" id="zen-supporting" role="main">
-		<div class="explanation" id="zen-explanation" role="article">
-			<h3>So What is This About?</h3>
-			<p>There is a continuing need to show the power of <abbr title="Cascading Style Sheets">CSS</abbr>. The Zen Garden aims to excite, inspire, and encourage participation. To begin, view some of the existing designs in the list. Clicking on any one will load the style sheet into this very page. The <abbr title="HyperText Markup Language">HTML</abbr> remains the same, the only thing that has changed is the external <abbr title="Cascading Style Sheets">CSS</abbr> file. Yes, really.</p>
-			<p><abbr title="Cascading Style Sheets">CSS</abbr> allows complete and total control over the style of a hypertext document. The only way this can be illustrated in a way that gets people excited is by demonstrating what it can truly be, once the reins are placed in the hands of those able to create beauty from structure. Designers and coders alike have contributed to the beauty of the web; we can always push it further.</p>
-		</div>
-
-		<div class="participation" id="zen-participation" role="article">
-			<h3>Participation</h3>
-			<p>Strong visual design has always been our focus. You are modifying this page, so strong <abbr title="Cascading Style Sheets">CSS</abbr> skills are necessary too, but the example files are commented well enough that even <abbr title="Cascading Style Sheets">CSS</abbr> novices can use them as starting points. Please see the <a href="/pages/resources/" title="A listing of CSS-related resources"><abbr title="Cascading Style Sheets">CSS</abbr> Resource Guide</a> for advanced tutorials and tips on working with <abbr title="Cascading Style Sheets">CSS</abbr>.</p>
-			<p>You may modify the style sheet in any way you wish, but not the <abbr title="HyperText Markup Language">HTML</abbr>. This may seem daunting at first if you&#8217;ve never worked this way before, but follow the listed links to learn more, and use the sample files as a guide.</p>
-			<p>Download the sample <a href="/examples/index" title="This page's source HTML code, not to be modified.">HTML</a> and <a href="/examples/style.css" title="This page's sample CSS, the file you may modify.">CSS</a> to work on a copy locally. Once you have completed your masterpiece (and please, don&#8217;t submit half-finished work) upload your <abbr title="Cascading Style Sheets">CSS</abbr> file to a web server under your control. <a href="/pages/submit/" title="Use the contact form to send us your CSS file">Send us a link</a> to an archive of that file and all associated assets, and if we choose to use it we will download it and place it on our server.</p>
-		</div>
-
-		<div class="benefits" id="zen-benefits" role="article">
-			<h3>Benefits</h3>
-			<p>Why participate? For recognition, inspiration, and a resource we can all refer to showing people how amazing <abbr title="Cascading Style Sheets">CSS</abbr> really can be. This site serves as equal parts inspiration for those working on the web today, learning tool for those who will be tomorrow, and gallery of future techniques we can all look forward to.</p>
-		</div>
-
-		<div class="requirements" id="zen-requirements" role="article">
-			<h3>Requirements</h3>
-			<p>Where possible, we would like to see mostly <abbr title="Cascading Style Sheets, levels 1 and 2">CSS 1 &amp; 2</abbr> usage. <abbr title="Cascading Style Sheets, levels 3 and 4">CSS 3 &amp; 4</abbr> should be limited to widely-supported elements only, or strong fallbacks should be provided. The CSS Zen Garden is about functional, practical <abbr title="Cascading Style Sheets">CSS</abbr> and not the latest bleeding-edge tricks viewable by 2% of the browsing public. The only real requirement we have is that your <abbr title="Cascading Style Sheets">CSS</abbr> validates.</p>
-			<p>Luckily, designing this way shows how well various browsers have implemented <abbr title="Cascading Style Sheets">CSS</abbr> by now. When sticking to the guidelines you should see fairly consistent results across most modern browsers. Due to the sheer number of user agents on the web these days &#8212; especially when you factor in mobile &#8212; pixel-perfect layouts may not be possible across every platform. That&#8217;s okay, but do test in as many as you can. Your design should work in at least IE9+ and the latest Chrome, Firefox, iOS and Android browsers (run by over 90% of the population).</p>
-			<p>We ask that you submit original artwork. Please respect copyright laws. Please keep objectionable material to a minimum, and try to incorporate unique and interesting visual themes to your work. We&#8217;re well past the point of needing another garden-related design.</p>
-			<p>This is a learning exercise as well as a demonstration. You retain full copyright on your graphics (with limited exceptions, see <a href="/pages/submit/guidelines/">submission guidelines</a>), but we ask you release your <abbr title="Cascading Style Sheets">CSS</abbr> under a Creative Commons license identical to the <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" title="View the Zen Garden's license information.">one on this site</a> so that others may learn from your work.</p>
-			<p role="contentinfo">By <a href="http://www.mezzoblue.com/">Dave Shea</a>. Bandwidth graciously donated by <a href="http://www.mediatemple.net/">mediatemple</a>. Now available: <a href="http://www.amazon.com/exec/obidos/ASIN/0321303474/mezzoblue-20/">Zen Garden, the book</a>.</p>
-		</div>
-
-		<footer>
-			<a href="http://validator.w3.org/check/referer" title="Check the validity of this site&#8217;s HTML" class="zen-validate-html">HTML</a>
-			<a href="http://jigsaw.w3.org/css-validator/check/referer" title="Check the validity of this site&#8217;s CSS" class="zen-validate-css">CSS</a>
-			<a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" title="View the Creative Commons license of this site: Attribution-NonCommercial-ShareAlike." class="zen-license">CC</a>
-			<a href="http://mezzoblue.com/zengarden/faq/#aaa" title="Read about the accessibility of this site" class="zen-accessibility">A11y</a>
-			<a href="https://github.com/mezzoblue/csszengarden.com" title="Fork this site on Github" class="zen-github">GH</a>
-		</footer>
-
-	</div>
-
-
-	<aside class="sidebar" role="complementary">
-		<div class="wrapper">
-
-			<div class="design-selection" id="design-selection">
-				<h3 class="select">Select a Design:</h3>
-				<nav role="navigation">
-					<ul>
-					<li>
-						<a href="/221/" class="design-name">Mid Century Modern</a> by						<a href="http://andrewlohman.com/" class="designer-name">Andrew Lohman</a>
-					</li>					<li>
-						<a href="/220/" class="design-name">Garments</a> by						<a href="http://danielmall.com/" class="designer-name">Dan Mall</a>
-					</li>					<li>
-						<a href="/219/" class="design-name">Steel</a> by						<a href="http://steffen-knoeller.de" class="designer-name">Steffen Knoeller</a>
-					</li>					<li>
-						<a href="/218/" class="design-name">Apothecary</a> by						<a href="http://trentwalton.com" class="designer-name">Trent Walton</a>
-					</li>					<li>
-						<a href="/217/" class="design-name">Screen Filler</a> by						<a href="http://elliotjaystocks.com/" class="designer-name">Elliot Jay Stocks</a>
-					</li>					<li>
-						<a href="/216/" class="design-name">Fountain Kiss</a> by						<a href="http://jeremycarlson.com" class="designer-name">Jeremy Carlson</a>
-					</li>					<li>
-						<a href="/215/" class="design-name">A Robot Named Jimmy</a> by						<a href="http://meltmedia.com/" class="designer-name">meltmedia</a>
-					</li>					<li>
-						<a href="/214/" class="design-name">Verde Moderna</a> by						<a href="http://www.mezzoblue.com/" class="designer-name">Dave Shea</a>
-					</li>					</ul>
-				</nav>
-			</div>
-
-			<div class="design-archives" id="design-archives">
-				<h3 class="archives">Archives:</h3>
-				<nav role="navigation">
-					<ul>
-						<li class="next">
-							<a href="/214/page1">
-								Next Designs <span class="indicator">&rsaquo;</span>
-							</a>
-						</li>
-						<li class="viewall">
-							<a href="/pages/alldesigns/" title="View every submission to the Zen Garden.">
-								View All Designs							</a>
-						</li>
-					</ul>
-				</nav>
-			</div>
-
-			<div class="zen-resources" id="zen-resources">
-				<h3 class="resources">Resources:</h3>
-				<ul>
-					<li class="view-css">
-						<a href="style.css" title="View the source CSS file of the currently-viewed design.">
-							View This Design&#8217;s <abbr title="Cascading Style Sheets">CSS</abbr>						</a>
-					</li>
-					<li class="css-resources">
-						<a href="/pages/resources/" title="Links to great sites with information on using CSS.">
-							<abbr title="Cascading Style Sheets">CSS</abbr> Resources						</a>
-					</li>
-					<li class="zen-faq">
-						<a href="/pages/faq/" title="A list of Frequently Asked Questions about the Zen Garden.">
-							<abbr title="Frequently Asked Questions">FAQ</abbr>						</a>
-					</li>
-					<li class="zen-submit">
-						<a href="/pages/submit/" title="Send in your own CSS file.">
-							Submit a Design						</a>
-					</li>
-					<li class="zen-translations">
-						<a href="/pages/translations/" title="View translated versions of this page.">
-							Translations						</a>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</aside>
-
-
+  <main id="main">
+    <div class="loading">Select a term from the sidebar to begin.</div>
+  </main>
 </div>
 
-<!--
+<script>
+// ── Load data ─────────────────────────────────────────────────────────────────
+// The site expects kwic_results.json in the same directory.
+// For GitHub Pages, commit that file alongside index.html.
 
-	These superfluous divs/spans were originally provided as catch-alls to add extra imagery.
-	These days we have full ::before and ::after support, favour using those instead.
-	These only remain for historical design compatibility. They might go away one day.
-		
--->
-<div class="extra1" role="presentation"></div><div class="extra2" role="presentation"></div><div class="extra3" role="presentation"></div>
-<div class="extra4" role="presentation"></div><div class="extra5" role="presentation"></div><div class="extra6" role="presentation"></div>
+const PERIODS = ["Obama", "Trump-1", "Biden", "Trump-2"];
+const PERIOD_COLORS = {
+  "Obama":   "#4a7fa5",
+  "Trump-1": "#c4893a",
+  "Biden":   "#5c7a6b",
+  "Trump-2": "#8b5a6b",
+};
+const PERIOD_LABELS = {
+  "Obama":   "Obama 2011–2017",
+  "Trump-1": "Trump I 2017–2021",
+  "Biden":   "Biden 2021–2025",
+  "Trump-2": "Trump II 2025–",
+};
 
+let DATA = null;
+let currentTerm = null;
+let currentPeriod = "Obama";
+
+async function loadData() {
+  try {
+    const resp = await fetch("kwic_results.json");
+    if (!resp.ok) throw new Error("Not found");
+    DATA = await resp.json();
+    buildSidebar();
+    // select first term with hits
+    const first = DATA.targets.find(t =>
+      PERIODS.some(p => (DATA.periods[p]?.[t]?.hit_count || 0) > 0)
+    );
+    if (first) selectTerm(first);
+  } catch (e) {
+    document.getElementById("sidebar").innerHTML =
+      `<div style="padding:16px;color:#8b3a3a;font-size:12px;">
+        Could not load kwic_results.json.<br><br>
+        Place your <code>kwic_results.json</code> file in the same folder as this HTML file and reload.
+       </div>`;
+    document.getElementById("main").innerHTML =
+      `<div class="loading">Waiting for data file…</div>`;
+  }
+}
+
+function totalHits(term) {
+  return PERIODS.reduce((s, p) =>
+    s + (DATA.periods[p]?.[term]?.hit_count || 0), 0);
+}
+
+function buildSidebar() {
+  const sidebar = document.getElementById("sidebar");
+  const targets = DATA.targets || [];
+
+  // group: targets with hits vs without
+  const withHits = targets.filter(t => totalHits(t) > 0);
+  const noHits   = targets.filter(t => totalHits(t) === 0);
+
+  let html = "";
+
+  // group by rough category
+  const phrases = withHits.filter(t => t.includes(" "));
+  const single  = withHits.filter(t => !t.includes(" "));
+
+  if (single.length) {
+    html += `<div class="sidebar-section">
+      <div class="sidebar-label">Single terms</div>`;
+    single.forEach(t => {
+      const n = totalHits(t);
+      html += `<button class="term-btn" onclick="selectTerm('${t}')" id="btn-${CSS.escape(t)}">
+        ${t} <span class="hit-badge">${n}</span>
+      </button>`;
+    });
+    html += `</div>`;
+  }
+
+  if (phrases.length) {
+    html += `<div class="sidebar-section">
+      <div class="sidebar-label">Phrases</div>`;
+    phrases.forEach(t => {
+      const n = totalHits(t);
+      html += `<button class="term-btn" onclick="selectTerm('${escapeAttr(t)}')" id="btn-${CSS.escape(t)}">
+        ${t} <span class="hit-badge">${n}</span>
+      </button>`;
+    });
+    html += `</div>`;
+  }
+
+  if (noHits.length) {
+    html += `<div class="sidebar-section">
+      <div class="sidebar-label" style="opacity:.5">No hits</div>`;
+    noHits.forEach(t => {
+      html += `<button class="term-btn" style="opacity:.4;cursor:default">${t}</button>`;
+    });
+    html += `</div>`;
+  }
+
+  sidebar.innerHTML = html;
+}
+
+function escapeAttr(s) {
+  return s.replace(/'/g, "\\'");
+}
+
+function selectTerm(term) {
+  currentTerm = term;
+  currentPeriod = PERIODS.find(p =>
+    (DATA.periods[p]?.[term]?.hit_count || 0) > 0
+  ) || "Obama";
+
+  // update sidebar active state
+  document.querySelectorAll(".term-btn").forEach(b => b.classList.remove("active"));
+  const btn = document.getElementById(`btn-${CSS.escape(term)}`);
+  if (btn) btn.classList.add("active");
+
+  renderMain();
+}
+
+function renderMain() {
+  const term = currentTerm;
+  const main = document.getElementById("main");
+
+  const counts = PERIODS.map(p => DATA.periods[p]?.[term]?.hit_count || 0);
+  const maxCount = Math.max(...counts, 1);
+
+  main.innerHTML = `
+    <!-- Hit count chart -->
+    <div class="chart-card">
+      <div class="chart-title">"${term}" — occurrences by administration</div>
+      <div class="period-bars">
+        ${PERIODS.map((p, i) => {
+          const n = counts[i];
+          const h = Math.round((n / maxCount) * 110);
+          return `
+          <div class="period-col">
+            <div class="bar-wrap">
+              <div class="bar ${p.toLowerCase().replace("-","")}-color"
+                   style="height:${h}px;background:${PERIOD_COLORS[p]}"
+                   title="${PERIOD_LABELS[p]}: ${n} hits">
+              </div>
+            </div>
+            <div class="bar-label">${n}</div>
+            <div class="period-name">${p}</div>
+          </div>`;
+        }).join("")}
+      </div>
+    </div>
+
+    <!-- Neighbors -->
+    <div>
+      <div class="section-title">Top neighbors (window ±10 words)</div>
+      <div class="two-col">
+        ${PERIODS.filter(p => (DATA.periods[p]?.[term]?.hit_count || 0) > 0)
+          .map(p => renderNeighborCard(term, p)).join("")}
+      </div>
+    </div>
+
+    <!-- Concordance -->
+    <div class="concordance-card">
+      <div class="section-title">Concordance lines</div>
+      <div class="source-legend">
+        <span><span class="legend-dot" style="background:#4a7fa5"></span>CFR text</span>
+        <span><span class="legend-dot" style="background:#c4893a"></span>Federal Register preamble</span>
+      </div>
+      <div class="period-tabs">
+        ${PERIODS.filter(p => (DATA.periods[p]?.[term]?.hit_count || 0) > 0)
+          .map(p => `<button class="period-tab ${p === currentPeriod ? 'active' : ''}"
+            onclick="switchTab('${p}')">${p}</button>`).join("")}
+      </div>
+      <div id="conc-lines">${renderConcordance(term, currentPeriod)}</div>
+    </div>
+
+    <!-- Neighbor drift -->
+    <div class="drift-card">
+      <div class="section-title">Neighbor drift between periods</div>
+      ${renderDrift(term)}
+    </div>
+  `;
+}
+
+function renderNeighborCard(term, period) {
+  const data = DATA.periods[period]?.[term];
+  if (!data || !data.top_neighbors?.length) return "";
+
+  const top = data.top_neighbors.slice(0, 12);
+  const max = top[0][1];
+
+  return `
+    <div class="neighbor-card">
+      <h3 style="color:${PERIOD_COLORS[period]}">
+        <span class="period-dot" style="background:${PERIOD_COLORS[period]}"></span>
+        ${period} &nbsp;<span style="font-weight:normal;color:var(--text-muted);font-size:11px">${data.hit_count} hits</span>
+      </h3>
+      <div class="neighbor-list">
+        ${top.map(([w, n]) => `
+          <div class="neighbor-row">
+            <span class="neighbor-word">${w}</span>
+            <div class="neighbor-bar-wrap">
+              <div class="neighbor-bar" style="width:${Math.round(n/max*100)}%;background:${PERIOD_COLORS[period]}44;border-right:2px solid ${PERIOD_COLORS[period]}"></div>
+            </div>
+            <span class="neighbor-count">${n}</span>
+          </div>`).join("")}
+      </div>
+    </div>`;
+}
+
+function switchTab(period) {
+  currentPeriod = period;
+  document.querySelectorAll(".period-tab").forEach(t => {
+    t.classList.toggle("active", t.textContent.trim() === period);
+  });
+  document.getElementById("conc-lines").innerHTML =
+    renderConcordance(currentTerm, period);
+}
+
+function renderConcordance(term, period) {
+  const data = DATA.periods[period]?.[term];
+  if (!data?.hits?.length) {
+    return `<div class="empty-state">No concordance lines for this period.</div>`;
+  }
+
+  return `<div class="concordance-lines">
+    ${data.hits.slice(0, 20).map(h => {
+      const src = h.source === "preamble" ? "preamble" : "cfr";
+      const srcLabel = src === "preamble"
+        ? `preamble · ${h.doc || ""}`
+        : `CFR §${h.part}`;
+      return `
+        <div class="conc-line conc-source-${src}">
+          <div class="conc-meta">${h.date} · ${srcLabel}</div>
+          …${escapeHtml(h.left)} <span class="match">${escapeHtml(h.match)}</span> ${escapeHtml(h.right)}…
+        </div>`;
+    }).join("")}
+  </div>`;
+}
+
+function renderDrift(term) {
+  // compute drift from the neighbor lists
+  const activePeriods = PERIODS.filter(p =>
+    (DATA.periods[p]?.[term]?.hit_count || 0) > 0
+  );
+
+  if (activePeriods.length < 2) {
+    return `<div class="empty-state">Not enough periods to show drift.</div>`;
+  }
+
+  let html = "";
+  for (let i = 0; i < activePeriods.length - 1; i++) {
+    const prev = activePeriods[i];
+    const curr = activePeriods[i + 1];
+    const prevWords = new Set(
+      (DATA.periods[prev]?.[term]?.top_neighbors || []).map(([w]) => w)
+    );
+    const currWords = new Set(
+      (DATA.periods[curr]?.[term]?.top_neighbors || []).map(([w]) => w)
+    );
+
+    const newWords  = [...currWords].filter(w => !prevWords.has(w));
+    const lostWords = [...prevWords].filter(w => !currWords.has(w));
+
+    html += `
+      <div class="drift-row">
+        <div class="drift-period">${prev} → ${curr}</div>
+        <div>
+          <div style="font-size:10px;color:var(--accent);margin-bottom:4px;font-weight:600">NEW NEIGHBORS</div>
+          ${newWords.length
+            ? `<div class="drift-words">${newWords.slice(0,18).map(w =>
+                `<span class="drift-tag drift-new">${w}</span>`).join("")}</div>`
+            : `<div class="drift-none">none</div>`}
+        </div>
+        <div>
+          <div style="font-size:10px;color:#8b3a3a;margin-bottom:4px;font-weight:600">LOST NEIGHBORS</div>
+          ${lostWords.length
+            ? `<div class="drift-words">${lostWords.slice(0,18).map(w =>
+                `<span class="drift-tag drift-lost">${w}</span>`).join("")}</div>`
+            : `<div class="drift-none">none</div>`}
+        </div>
+      </div>`;
+  }
+
+  return html;
+}
+
+function escapeHtml(s) {
+  if (!s) return "";
+  return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+}
+
+loadData();
+</script>
 </body>
 </html>

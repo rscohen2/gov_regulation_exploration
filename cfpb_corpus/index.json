@@ -1,0 +1,887 @@
+{
+  "1002": {
+    "name": "Regulation B - Equal Credit Opportunity Act",
+    "versions": [
+      {
+        "date": "2017-01-01",
+        "hash": "13551316573c",
+        "snapshot": "13551316573c",
+        "change_type": "initial"
+      },
+      {
+        "date": "2017-04-25",
+        "hash": "0d63e7d64803",
+        "snapshot": "0d63e7d64803",
+        "diff_from": "2017-01-01",
+        "change_type": "amended"
+      },
+      {
+        "date": "2017-10-02",
+        "hash": "2eac92d9a8ba",
+        "snapshot": "2eac92d9a8ba",
+        "diff_from": "2017-04-25",
+        "change_type": "amended"
+      },
+      {
+        "date": "2018-01-01",
+        "hash": "3c755218ff9f",
+        "snapshot": "3c755218ff9f",
+        "diff_from": "2017-10-02",
+        "change_type": "amended"
+      },
+      {
+        "date": "2020-03-02",
+        "hash": "ef7eda097579",
+        "snapshot": "ef7eda097579",
+        "diff_from": "2018-01-01",
+        "change_type": "amended"
+      },
+      {
+        "date": "2022-01-01",
+        "hash": "6e3e374fe9cd",
+        "snapshot": "6e3e374fe9cd",
+        "diff_from": "2020-03-02",
+        "change_type": "amended"
+      },
+      {
+        "date": "2023-03-20",
+        "hash": "7b7f92d39351",
+        "snapshot": "7b7f92d39351",
+        "diff_from": "2022-01-01",
+        "change_type": "amended"
+      },
+      {
+        "date": "2023-04-19",
+        "hash": "d56e0af55952",
+        "snapshot": "d56e0af55952",
+        "diff_from": "2023-03-20",
+        "change_type": "amended"
+      },
+      {
+        "date": "2023-05-31",
+        "hash": "8ceb8bab4b7b",
+        "snapshot": "8ceb8bab4b7b",
+        "diff_from": "2023-04-19",
+        "change_type": "amended"
+      },
+      {
+        "date": "2023-08-25",
+        "hash": "8ceb8bab4b7b",
+        "snapshot": "8ceb8bab4b7b",
+        "change_type": "no_change"
+      },
+      {
+        "date": "2023-08-29",
+        "hash": "e642c7eb41b4",
+        "snapshot": "e642c7eb41b4",
+        "diff_from": "2023-08-25",
+        "change_type": "amended"
+      },
+      {
+        "date": "2023-09-14",
+        "hash": "e642c7eb41b4",
+        "snapshot": "e642c7eb41b4",
+        "change_type": "no_change"
+      },
+      {
+        "date": "2023-09-25",
+        "hash": "b65a11edaffd",
+        "snapshot": "b65a11edaffd",
+        "diff_from": "2023-09-14",
+        "change_type": "amended"
+      },
+      {
+        "date": "2024-07-03",
+        "hash": "b65a11edaffd",
+        "snapshot": "b65a11edaffd",
+        "change_type": "no_change"
+      },
+      {
+        "date": "2024-08-02",
+        "hash": "9cf9ad7a8b10",
+        "snapshot": "9cf9ad7a8b10",
+        "diff_from": "2024-07-03",
+        "change_type": "amended"
+      },
+      {
+        "date": "2024-09-19",
+        "hash": "c04a1a7d8160",
+        "snapshot": "c04a1a7d8160",
+        "diff_from": "2024-08-02",
+        "change_type": "amended"
+      },
+      {
+        "date": "2025-06-18",
+        "hash": "c04a1a7d8160",
+        "snapshot": "c04a1a7d8160",
+        "change_type": "no_change"
+      },
+      {
+        "date": "2025-07-18",
+        "hash": "f86a1ef862f2",
+        "snapshot": "f86a1ef862f2",
+        "diff_from": "2025-06-18",
+        "change_type": "amended"
+      },
+      {
+        "date": "2025-10-02",
+        "hash": "f86a1ef862f2",
+        "snapshot": "f86a1ef862f2",
+        "change_type": "no_change"
+      },
+      {
+        "date": "2025-12-01",
+        "hash": "4e18c2d7c814",
+        "snapshot": "4e18c2d7c814",
+        "diff_from": "2025-10-02",
+        "change_type": "amended"
+      },
+      {
+        "date": "2026-04-22",
+        "hash": "4e18c2d7c814",
+        "snapshot": "4e18c2d7c814",
+        "change_type": "no_change"
+      },
+      {
+        "date": "2026-05-01",
+        "hash": "4e18c2d7c814",
+        "snapshot": "4e18c2d7c814",
+        "change_type": "no_change"
+      },
+      {
+        "date": "2026-06-30",
+        "hash": "647985de3b07",
+        "snapshot": "647985de3b07",
+        "diff_from": "2026-05-01",
+        "change_type": "amended"
+      },
+      {
+        "date": "2026-07-21",
+        "hash": "517d01024d0b",
+        "snapshot": "517d01024d0b",
+        "diff_from": "2026-06-30",
+        "change_type": "amended"
+      }
+    ]
+  },
+  "1003": {
+    "name": "Regulation C - Home Mortgage Disclosure",
+    "versions": [
+      {
+        "date": "2017-01-01",
+        "hash": "e4f6069d066a",
+        "snapshot": "e4f6069d066a",
+        "change_type": "initial"
+      },
+      {
+        "date": "2017-09-13",
+        "hash": "e4f6069d066a",
+        "snapshot": "e4f6069d066a",
+        "change_type": "no_change"
+      },
+      {
+        "date": "2017-12-27",
+        "hash": "e4f6069d066a",
+        "snapshot": "e4f6069d066a",
+        "change_type": "no_change"
+      },
+      {
+        "date": "2018-01-01",
+        "hash": "39d2092b1fd4",
+        "snapshot": "39d2092b1fd4",
+        "diff_from": "2017-12-27",
+        "change_type": "amended"
+      },
+      {
+        "date": "2018-02-13",
+        "hash": "ca8344e35e46",
+        "snapshot": "ca8344e35e46",
+        "diff_from": "2018-01-01",
+        "change_type": "amended"
+      },
+      {
+        "date": "2019-01-01",
+        "hash": "917afd6f91cf",
+        "snapshot": "917afd6f91cf",
+        "diff_from": "2018-02-13",
+        "change_type": "amended"
+      },
+      {
+        "date": "2019-01-31",
+        "hash": "088c49607026",
+        "snapshot": "088c49607026",
+        "diff_from": "2019-01-01",
+        "change_type": "amended"
+      },
+      {
+        "date": "2019-10-29",
+        "hash": "088c49607026",
+        "snapshot": "088c49607026",
+        "change_type": "no_change"
+      },
+      {
+        "date": "2019-12-20",
+        "hash": "088c49607026",
+        "snapshot": "088c49607026",
+        "change_type": "no_change"
+      },
+      {
+        "date": "2020-01-01",
+        "hash": "ba4886dda1bd",
+        "snapshot": "ba4886dda1bd",
+        "diff_from": "2019-12-20",
+        "change_type": "amended"
+      },
+      {
+        "date": "2020-03-02",
+        "hash": "8fa303f91ff4",
+        "snapshot": "8fa303f91ff4",
+        "diff_from": "2020-01-01",
+        "change_type": "amended"
+      },
+      {
+        "date": "2020-03-06",
+        "hash": "8fa303f91ff4",
+        "snapshot": "8fa303f91ff4",
+        "change_type": "no_change"
+      },
+      {
+        "date": "2020-05-12",
+        "hash": "8fa303f91ff4",
+        "snapshot": "8fa303f91ff4",
+        "change_type": "no_change"
+      },
+      {
+        "date": "2020-07-01",
+        "hash": "821e73bb1c76",
+        "snapshot": "821e73bb1c76",
+        "diff_from": "2020-05-12",
+        "change_type": "amended"
+      },
+      {
+        "date": "2020-12-22",
+        "hash": "821e73bb1c76",
+        "snapshot": "821e73bb1c76",
+        "change_type": "no_change"
+      },
+      {
+        "date": "2021-01-01",
+        "hash": "3818b6d49554",
+        "snapshot": "3818b6d49554",
+        "diff_from": "2020-12-22",
+        "change_type": "amended"
+      },
+      {
+        "date": "2021-03-01",
+        "hash": "3818b6d49554",
+        "snapshot": "3818b6d49554",
+        "change_type": "no_change"
+      },
+      {
+        "date": "2021-12-23",
+        "hash": "3818b6d49554",
+        "snapshot": "3818b6d49554",
+        "change_type": "no_change"
+      },
+      {
+        "date": "2022-01-01",
+        "hash": "36c3631efea8",
+        "snapshot": "36c3631efea8",
+        "diff_from": "2021-12-23",
+        "change_type": "amended"
+      },
+      {
+        "date": "2022-12-21",
+        "hash": "f695b7c393c5",
+        "snapshot": "f695b7c393c5",
+        "diff_from": "2022-01-01",
+        "change_type": "amended"
+      },
+      {
+        "date": "2022-12-30",
+        "hash": "7f7a37988eb4",
+        "snapshot": "7f7a37988eb4",
+        "diff_from": "2022-12-21",
+        "change_type": "amended"
+      },
+      {
+        "date": "2023-01-01",
+        "hash": "65d183e34dac",
+        "snapshot": "65d183e34dac",
+        "diff_from": "2022-12-30",
+        "change_type": "amended"
+      },
+      {
+        "date": "2023-12-21",
+        "hash": "12ed810e9bb6",
+        "snapshot": "12ed810e9bb6",
+        "diff_from": "2023-01-01",
+        "change_type": "amended"
+      },
+      {
+        "date": "2024-01-01",
+        "hash": "d1389ade3539",
+        "snapshot": "d1389ade3539",
+        "diff_from": "2023-12-21",
+        "change_type": "amended"
+      },
+      {
+        "date": "2024-12-27",
+        "hash": "830db078c0f6",
+        "snapshot": "830db078c0f6",
+        "diff_from": "2024-01-01",
+        "change_type": "amended"
+      },
+      {
+        "date": "2025-01-01",
+        "hash": "ee87de3024bc",
+        "snapshot": "ee87de3024bc",
+        "diff_from": "2024-12-27",
+        "change_type": "amended"
+      },
+      {
+        "date": "2026-01-07",
+        "hash": "4a5465763a90",
+        "snapshot": "4a5465763a90",
+        "diff_from": "2025-01-01",
+        "change_type": "amended"
+      }
+    ]
+  },
+  "1005": {
+    "name": "Regulation E - Electronic Fund Transfers",
+    "versions": [
+      {
+        "date": "2017-01-01",
+        "hash": "a90f88af357b",
+        "snapshot": "a90f88af357b",
+        "change_type": "initial"
+      },
+      {
+        "date": "2017-04-25",
+        "hash": "a90f88af357b",
+        "snapshot": "a90f88af357b",
+        "change_type": "no_change"
+      },
+      {
+        "date": "2017-12-27",
+        "hash": "bea438c629f3",
+        "snapshot": "bea438c629f3",
+        "diff_from": "2017-04-25",
+        "change_type": "amended"
+      },
+      {
+        "date": "2018-01-01",
+        "hash": "bea438c629f3",
+        "snapshot": "bea438c629f3",
+        "change_type": "no_change"
+      },
+      {
+        "date": "2018-02-13",
+        "hash": "a90f88af357b",
+        "snapshot": "a90f88af357b",
+        "diff_from": "2018-01-01",
+        "change_type": "amended"
+      },
+      {
+        "date": "2019-04-01",
+        "hash": "d07aa3f1f97e",
+        "snapshot": "d07aa3f1f97e",
+        "diff_from": "2018-02-13",
+        "change_type": "amended"
+      },
+      {
+        "date": "2019-11-14",
+        "hash": "91c49810f45c",
+        "snapshot": "91c49810f45c",
+        "diff_from": "2019-04-01",
+        "change_type": "amended"
+      },
+      {
+        "date": "2020-06-05",
+        "hash": "36c15e0081bb",
+        "snapshot": "36c15e0081bb",
+        "diff_from": "2019-11-14",
+        "change_type": "amended"
+      },
+      {
+        "date": "2020-07-21",
+        "hash": "31172d088e63",
+        "snapshot": "31172d088e63",
+        "diff_from": "2020-06-05",
+        "change_type": "amended"
+      },
+      {
+        "date": "2023-03-20",
+        "hash": "0ff96af3d9e2",
+        "snapshot": "0ff96af3d9e2",
+        "diff_from": "2020-07-21",
+        "change_type": "amended"
+      },
+      {
+        "date": "2023-04-19",
+        "hash": "8c301219937b",
+        "snapshot": "8c301219937b",
+        "diff_from": "2023-03-20",
+        "change_type": "amended"
+      },
+      {
+        "date": "2024-12-30",
+        "hash": "fce5e0b202d6",
+        "snapshot": "fce5e0b202d6",
+        "diff_from": "2023-04-19",
+        "change_type": "amended"
+      },
+      {
+        "date": "2025-10-01",
+        "hash": "67b1616f4d1d",
+        "snapshot": "67b1616f4d1d",
+        "diff_from": "2024-12-30",
+        "change_type": "amended"
+      }
+    ]
+  },
+  "1006": {
+    "name": "Regulation F - Fair Debt Collection Practices Act",
+    "versions": [
+      {
+        "date": "2017-01-01",
+        "hash": "cc778f954baa",
+        "snapshot": "cc778f954baa",
+        "change_type": "initial"
+      },
+      {
+        "date": "2021-01-19",
+        "hash": "3ca63a0ff5bc",
+        "snapshot": "3ca63a0ff5bc",
+        "diff_from": "2017-01-01",
+        "change_type": "amended"
+      },
+      {
+        "date": "2021-04-22",
+        "hash": "b5f92fc06fc5",
+        "snapshot": "b5f92fc06fc5",
+        "diff_from": "2021-01-19",
+        "change_type": "amended"
+      },
+      {
+        "date": "2021-05-03",
+        "hash": "c3456ab692cb",
+        "snapshot": "c3456ab692cb",
+        "diff_from": "2021-04-22",
+        "change_type": "amended"
+      },
+      {
+        "date": "2021-11-30",
+        "hash": "040bb8597ccf",
+        "snapshot": "040bb8597ccf",
+        "diff_from": "2021-05-03",
+        "change_type": "amended"
+      },
+      {
+        "date": "2022-11-01",
+        "hash": "5414ed3b7e8b",
+        "snapshot": "5414ed3b7e8b",
+        "diff_from": "2021-11-30",
+        "change_type": "amended"
+      },
+      {
+        "date": "2023-03-20",
+        "hash": "7d74461bfc82",
+        "snapshot": "7d74461bfc82",
+        "diff_from": "2022-11-01",
+        "change_type": "amended"
+      },
+      {
+        "date": "2023-04-19",
+        "hash": "338aeca31f8e",
+        "snapshot": "338aeca31f8e",
+        "diff_from": "2023-03-20",
+        "change_type": "amended"
+      }
+    ]
+  },
+  "1016": {
+    "name": "Regulation P - Privacy",
+    "versions": [
+      {
+        "date": "2017-01-01",
+        "hash": "868a95d056c9",
+        "snapshot": "868a95d056c9",
+        "change_type": "initial"
+      },
+      {
+        "date": "2018-08-17",
+        "hash": "868a95d056c9",
+        "snapshot": "868a95d056c9",
+        "change_type": "no_change"
+      },
+      {
+        "date": "2018-09-17",
+        "hash": "8c028509c568",
+        "snapshot": "8c028509c568",
+        "diff_from": "2018-08-17",
+        "change_type": "amended"
+      }
+    ]
+  },
+  "1022": {
+    "name": "Regulation V - Fair Credit Reporting",
+    "versions": [
+      {
+        "date": "2017-01-01",
+        "hash": "750a7227a539",
+        "snapshot": "750a7227a539",
+        "change_type": "initial"
+      },
+      {
+        "date": "2018-09-18",
+        "hash": "750a7227a539",
+        "snapshot": "750a7227a539",
+        "change_type": "no_change"
+      },
+      {
+        "date": "2018-09-21",
+        "hash": "99382e9df8d3",
+        "snapshot": "99382e9df8d3",
+        "diff_from": "2018-09-18",
+        "change_type": "amended"
+      },
+      {
+        "date": "2019-01-31",
+        "hash": "a4345e71a5be",
+        "snapshot": "a4345e71a5be",
+        "diff_from": "2018-09-21",
+        "change_type": "amended"
+      },
+      {
+        "date": "2019-11-27",
+        "hash": "a4345e71a5be",
+        "snapshot": "a4345e71a5be",
+        "change_type": "no_change"
+      },
+      {
+        "date": "2020-01-01",
+        "hash": "af4dea7233ff",
+        "snapshot": "af4dea7233ff",
+        "diff_from": "2019-11-27",
+        "change_type": "amended"
+      },
+      {
+        "date": "2020-12-23",
+        "hash": "af4dea7233ff",
+        "snapshot": "af4dea7233ff",
+        "change_type": "no_change"
+      },
+      {
+        "date": "2021-01-01",
+        "hash": "252ea70f6888",
+        "snapshot": "252ea70f6888",
+        "diff_from": "2020-12-23",
+        "change_type": "amended"
+      },
+      {
+        "date": "2021-11-29",
+        "hash": "252ea70f6888",
+        "snapshot": "252ea70f6888",
+        "change_type": "no_change"
+      },
+      {
+        "date": "2022-01-01",
+        "hash": "3fd2a7bb5f80",
+        "snapshot": "3fd2a7bb5f80",
+        "diff_from": "2021-11-29",
+        "change_type": "amended"
+      },
+      {
+        "date": "2022-06-24",
+        "hash": "a0d4c6238631",
+        "snapshot": "a0d4c6238631",
+        "diff_from": "2022-01-01",
+        "change_type": "amended"
+      },
+      {
+        "date": "2022-07-25",
+        "hash": "d5f839f546d7",
+        "snapshot": "d5f839f546d7",
+        "diff_from": "2022-06-24",
+        "change_type": "amended"
+      },
+      {
+        "date": "2022-11-25",
+        "hash": "d5f839f546d7",
+        "snapshot": "d5f839f546d7",
+        "change_type": "no_change"
+      },
+      {
+        "date": "2023-01-01",
+        "hash": "734b1d5148f4",
+        "snapshot": "734b1d5148f4",
+        "diff_from": "2022-11-25",
+        "change_type": "amended"
+      },
+      {
+        "date": "2023-03-20",
+        "hash": "88be7f561c7d",
+        "snapshot": "88be7f561c7d",
+        "diff_from": "2023-01-01",
+        "change_type": "amended"
+      },
+      {
+        "date": "2023-04-19",
+        "hash": "48611b96a062",
+        "snapshot": "48611b96a062",
+        "diff_from": "2023-03-20",
+        "change_type": "amended"
+      },
+      {
+        "date": "2023-08-25",
+        "hash": "48611b96a062",
+        "snapshot": "48611b96a062",
+        "change_type": "no_change"
+      },
+      {
+        "date": "2023-09-25",
+        "hash": "5d72eea76c62",
+        "snapshot": "5d72eea76c62",
+        "diff_from": "2023-08-25",
+        "change_type": "amended"
+      },
+      {
+        "date": "2023-11-15",
+        "hash": "5d72eea76c62",
+        "snapshot": "5d72eea76c62",
+        "change_type": "no_change"
+      },
+      {
+        "date": "2024-01-01",
+        "hash": "a21f09695eda",
+        "snapshot": "a21f09695eda",
+        "diff_from": "2023-11-15",
+        "change_type": "amended"
+      },
+      {
+        "date": "2024-11-29",
+        "hash": "a21f09695eda",
+        "snapshot": "a21f09695eda",
+        "change_type": "no_change"
+      },
+      {
+        "date": "2025-01-01",
+        "hash": "5a9e2e516b7c",
+        "snapshot": "5a9e2e516b7c",
+        "diff_from": "2024-11-29",
+        "change_type": "amended"
+      },
+      {
+        "date": "2025-01-14",
+        "hash": "e585abecbac4",
+        "snapshot": "e585abecbac4",
+        "diff_from": "2025-01-01",
+        "change_type": "amended"
+      },
+      {
+        "date": "2025-01-27",
+        "hash": "e585abecbac4",
+        "snapshot": "e585abecbac4",
+        "change_type": "no_change"
+      },
+      {
+        "date": "2025-03-17",
+        "hash": "2f892f4e855c",
+        "snapshot": "2f892f4e855c",
+        "diff_from": "2025-01-27",
+        "change_type": "amended"
+      },
+      {
+        "date": "2025-12-15",
+        "hash": "2f892f4e855c",
+        "snapshot": "2f892f4e855c",
+        "change_type": "no_change"
+      },
+      {
+        "date": "2026-01-01",
+        "hash": "f3d69d0fd7c0",
+        "snapshot": "f3d69d0fd7c0",
+        "diff_from": "2025-12-15",
+        "change_type": "amended"
+      }
+    ]
+  },
+  "1024": {
+    "name": "Regulation X - RESPA",
+    "versions": [
+      {
+        "date": "2017-01-01",
+        "hash": "53fb555ab995",
+        "snapshot": "53fb555ab995",
+        "change_type": "initial"
+      },
+      {
+        "date": "2017-04-25",
+        "hash": "70038b9f8806",
+        "snapshot": "70038b9f8806",
+        "diff_from": "2017-01-01",
+        "change_type": "amended"
+      },
+      {
+        "date": "2017-07-05",
+        "hash": "70038b9f8806",
+        "snapshot": "70038b9f8806",
+        "change_type": "no_change"
+      },
+      {
+        "date": "2017-10-16",
+        "hash": "70038b9f8806",
+        "snapshot": "70038b9f8806",
+        "change_type": "no_change"
+      },
+      {
+        "date": "2017-10-19",
+        "hash": "97d6d8c5be21",
+        "snapshot": "97d6d8c5be21",
+        "diff_from": "2017-10-16",
+        "change_type": "amended"
+      },
+      {
+        "date": "2017-10-30",
+        "hash": "a0c355221b13",
+        "snapshot": "a0c355221b13",
+        "diff_from": "2017-10-19",
+        "change_type": "amended"
+      },
+      {
+        "date": "2017-12-27",
+        "hash": "5708dacd3efb",
+        "snapshot": "5708dacd3efb",
+        "diff_from": "2017-10-30",
+        "change_type": "amended"
+      },
+      {
+        "date": "2018-04-19",
+        "hash": "205f77d572bb",
+        "snapshot": "205f77d572bb",
+        "diff_from": "2017-12-27",
+        "change_type": "amended"
+      },
+      {
+        "date": "2020-07-01",
+        "hash": "b68a12d5693e",
+        "snapshot": "b68a12d5693e",
+        "diff_from": "2018-04-19",
+        "change_type": "amended"
+      },
+      {
+        "date": "2021-06-30",
+        "hash": "8479844a77da",
+        "snapshot": "8479844a77da",
+        "diff_from": "2020-07-01",
+        "change_type": "amended"
+      },
+      {
+        "date": "2021-08-31",
+        "hash": "863cf890dcb9",
+        "snapshot": "863cf890dcb9",
+        "diff_from": "2021-06-30",
+        "change_type": "amended"
+      },
+      {
+        "date": "2023-03-20",
+        "hash": "dc6dc219aeee",
+        "snapshot": "dc6dc219aeee",
+        "diff_from": "2021-08-31",
+        "change_type": "amended"
+      },
+      {
+        "date": "2023-04-19",
+        "hash": "730144250ff6",
+        "snapshot": "730144250ff6",
+        "diff_from": "2023-03-20",
+        "change_type": "amended"
+      },
+      {
+        "date": "2025-05-16",
+        "hash": "78e595fc1107",
+        "snapshot": "78e595fc1107",
+        "diff_from": "2023-04-19",
+        "change_type": "amended"
+      },
+      {
+        "date": "2025-07-15",
+        "hash": "dcad28abd35e",
+        "snapshot": "dcad28abd35e",
+        "diff_from": "2025-05-16",
+        "change_type": "amended"
+      }
+    ]
+  },
+  "1026": {
+    "name": "Regulation Z - Truth in Lending",
+    "versions": [
+      {
+        "date": "2017-01-01",
+        "hash": "7f64436300a0",
+        "snapshot": "7f64436300a0",
+        "change_type": "initial"
+      },
+      {
+        "date": "2017-04-25",
+        "hash": "67ede94910ed",
+        "snapshot": "67ede94910ed",
+        "diff_from": "2017-01-01",
+        "change_type": "amended"
+      },
+      {
+        "date": "2017-07-05",
+        "hash": "67ede94910ed",
+        "snapshot": "67ede94910ed",
+        "change_type": "no_change"
+      },
+      {
+        "date": "2017-08-11",
+        "hash": "67ede94910ed",
+        "snapshot": "67ede94910ed",
+        "change_type": "no_change"
+      },
+      {
+        "date": "2017-08-30",
+        "hash": "67ede94910ed",
+        "snapshot": "67ede94910ed",
+        "change_type": "no_change"
+      },
+      {
+        "date": "2017-10-10",
+        "hash": "91b407492c74",
+        "snapshot": "91b407492c74",
+        "diff_from": "2017-08-30",
+        "change_type": "amended"
+      },
+      {
+        "date": "2017-10-19",
+        "hash": "fe36f517113d",
+        "snapshot": "fe36f517113d",
+        "diff_from": "2017-10-10",
+        "change_type": "amended"
+      },
+      {
+        "date": "2017-11-09",
+        "hash": "fe36f517113d",
+        "snapshot": "fe36f517113d",
+        "change_type": "no_change"
+      },
+      {
+        "date": "2017-12-27",
+        "hash": "fe36f517113d",
+        "snapshot": "fe36f517113d",
+        "change_type": "no_change"
+      },
+      {
+        "date": "2018-01-01",
+        "hash": "47233de733f9",
+        "snapshot": "47233de733f9",
+        "diff_from": "2017-12-27",
+        "change_type": "amended"
+      }
+    ]
+  }
+}

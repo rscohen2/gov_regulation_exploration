@@ -1,0 +1,5 @@
+~ "pursuant to" → "interpretations of this part issued by duly authorized officials of the bureau provide the protection afforded under"
+~ "act, the bureau has designated the associate director and other officials of the division of research, markets, and regulations as officials “duly authorized” to issue, at their discretion, official interpretations of this part." → "act."
+~ "nw.," → "nw,"
+~ "20006." → "20552."
++ "[88 fr 16538, mar. 20, 2023]"

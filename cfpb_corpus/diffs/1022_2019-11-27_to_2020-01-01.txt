@@ -1,0 +1,3 @@
+~ "2019," → "2020,"
++ "was $12.50. 9. for calendar year 2020, the maximum allowable disclosure charge"
+~ "517, jan. 31," → "65281, nov. 27,"

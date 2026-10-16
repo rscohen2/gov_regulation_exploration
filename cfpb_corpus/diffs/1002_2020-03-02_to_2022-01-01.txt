@@ -1,0 +1,4 @@
++ "1. this appendix contains four model credit application forms, each designated for use in a particular type of consumer credit transaction as indicated by the bracketed caption on each form."
++ "and"
+~ "states; and the fifth in residential mortgage transactions which contains a model disclosure for use in complying with § 1002.13 for certain dwelling-related loans." → "states."
++ "45695,"

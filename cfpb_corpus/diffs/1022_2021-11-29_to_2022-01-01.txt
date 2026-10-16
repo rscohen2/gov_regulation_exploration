@@ -1,0 +1,5 @@
+~ "2021," → "2022,"
+~ "$13.00." → "$13.50."
++ "was $13.00. 11. for calendar year 2022, the maximum allowable disclosure charge"
+~ "$13.00. [85" → "$13.50. [86"
+~ "83750, dec. 23, 2020]" → "67650, nov. 29, 2021]"
